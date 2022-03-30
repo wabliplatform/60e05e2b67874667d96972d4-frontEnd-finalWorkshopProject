@@ -56,7 +56,17 @@ document.getElementById("iyjqci").onclick = event => {
      e += `<li arrayvalue='${arrayib5cm3[y].value}'>${arrayib5cm3[y].liValue}</li>`;
    }
    document.getElementById("ixe5wc").innerHTML = e;
-};const arrayin4tia = [];
+};document.addEventListener('alignpWorkpackage', function(e) {
+  const advanceSelect = document.getElementById('im1p3y');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});const arrayin4tia = [];
 document.getElementById("i4l8rv").onclick = event => {
   event.preventDefault();
   const select = document.getElementById("iy94xx")
@@ -72,7 +82,17 @@ document.getElementById("i4l8rv").onclick = event => {
      e += `<li arrayvalue='${arrayin4tia[y].value}'>${arrayin4tia[y].liValue}</li>`;
    }
    document.getElementById("i4b8xv").innerHTML = e;
-};document.getElementById('i7w1n').onclick = (event) => {
+};document.addEventListener('alignpDeliverable', function(e) {
+  const advanceSelect = document.getElementById('iy94xx');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.getElementById('i7w1n').onclick = (event) => {
     event.preventDefault();
     project['pImage'] = {
         data: document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") !== null ? document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") : document.querySelector("[annotationname = 'pImage']").src,
@@ -84,11 +104,21 @@ document.getElementById("i4l8rv").onclick = event => {
   );const map = new Map();  data.forEach((item,i) => {
     if(subDataElements.length > i)
       {
-        console.log('There are no inside data elements');
+        try { 
+      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'wName']");
+      if(insideSubDataElement !== null){
+        insideSubDataElement.textContent = data[data.length -i -1].wName;
+        insideSubDataElement.value=data[data.length -i -1]._id;
+      }
+      else if(subDataElements[i].getAttribute('annotationname') === 'wName'){
+        subDataElements[i].textContent = data[data.length -i -1].wName;
+        subDataElements[i].value=data[data.length -i -1]._id;
+      }
+     } catch (e) { console.log(e) };
         map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
         
       }
-      
+      document.dispatchEvent(new Event("alignpWorkpackage"))
     });
 
     window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
@@ -99,11 +129,21 @@ document.getElementById("i4l8rv").onclick = event => {
   );const map = new Map();  data.forEach((item,i) => {
     if(subDataElements.length > i)
       {
-        console.log('There are no inside data elements');
+        try { 
+      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'dName']");
+      if(insideSubDataElement !== null){
+        insideSubDataElement.textContent = data[data.length -i -1].dName;
+        insideSubDataElement.value=data[data.length -i -1]._id;
+      }
+      else if(subDataElements[i].getAttribute('annotationname') === 'dName'){
+        subDataElements[i].textContent = data[data.length -i -1].dName;
+        subDataElements[i].value=data[data.length -i -1]._id;
+      }
+     } catch (e) { console.log(e) };
         map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
         
       }
-      
+      document.dispatchEvent(new Event("alignpDeliverable"))
     });
 
     window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
