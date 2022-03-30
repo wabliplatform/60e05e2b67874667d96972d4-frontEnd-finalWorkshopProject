@@ -1,0 +1,73 @@
+
+[{
+    "methodType":"POST",
+    "methodName":"createdeliverable",
+    "returnType":{
+      "primitive":false,
+      "jsType":"",
+      "modelName":"Deliverable"
+    },
+    "importStatement":"import TempApi from '../src/index';",
+    "apiInstance":"let apiDeliverableApi = new TempApi.DeliverableApi();",
+    "importModelParameter":["let deliverable = new TempApi.Deliverable();"],
+    "modelNames":["deliverable"],
+    "functionNextTemplate":"/**nextFunction*/",
+    "apiCallPromisified":"apiDeliverableApi.createdeliverable( deliverable, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); /**nextFunction*/}});"
+  },{
+    "methodType":"DELETE",
+    "methodName":"deletedeliverable",
+    "returnType":{
+
+      "primitive":"true",
+      "type":"null"
+    },
+    "importStatement":"import TempApi from '../src/index';",
+    "apiInstance":"let apiDeliverableApi = new TempApi.DeliverableApi();",
+    "importModelParameter":[],
+    "modelNames":[],
+    "functionNextTemplate":"/**nextFunction*/",
+    "apiCallPromisified":"apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');/**nextFunction*/}});"
+  },{
+    "methodType":"GETALL",
+    "methodName":"getAlldeliverable",
+    "returnType":{
+      "primitive":false,
+      "jsType":"Array",
+      "modelName":"[Deliverable]"
+    },
+    "importStatement":"import TempApi from '../src/index';",
+    "apiInstance":"let apiDeliverableApi = new TempApi.DeliverableApi();",
+    "importModelParameter":[],
+    "modelNames":[],
+    "functionNextTemplate":"/**nextFunction*/",
+    "apiCallPromisified":"apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); /**nextFunction*/}});"
+  },{
+    "methodType":"GET",
+    "methodName":"getdeliverable",
+    "returnType":{
+      "primitive":false,
+      "jsType":"",
+      "modelName":"Deliverable"
+    },
+    "importStatement":"import TempApi from '../src/index';",
+    "apiInstance":"let apiDeliverableApi = new TempApi.DeliverableApi();",
+    "importModelParameter":[],
+    "modelNames":[],
+    "functionNextTemplate":"/**nextFunction*/",
+    "apiCallPromisified":"apiDeliverableApi.getdeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); /**nextFunction*/}});"
+  },{
+    "methodType":"PUT",
+    "methodName":"updatedeliverable",
+    "returnType":{
+      "primitive":false,
+      "jsType":"",
+      "modelName":"Deliverable"
+    },
+    "importStatement":"import TempApi from '../src/index';",
+    "apiInstance":"let apiDeliverableApi = new TempApi.DeliverableApi();",
+    "importModelParameter":[],
+    "modelNames":[],
+    "functionNextTemplate":"/**nextFunction*/",
+    "apiCallPromisified":"apiDeliverableApi.updatedeliverable( deliverableId, opts, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); /**nextFunction*/}});"
+  }
+]
