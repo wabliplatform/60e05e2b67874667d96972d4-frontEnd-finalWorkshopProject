@@ -67,7 +67,16 @@ document.getElementById("i5zsp").onclick = event => {
     employee['eName'] = document.querySelector("[annotationname = 'eName']").value;employee['eSurname'] = document.querySelector("[annotationname = 'eSurname']").value;employee['eImage'] = document.querySelector("[annotationname = 'eImage']").value;employee["eProject"] = [...document.querySelector("[annotationname = 'eProject']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));apiEmployeeApi.createemployee( employee, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {  location.href= '/homePage/'+response.body.query._id+'' ;}}});};window.onload = () => {apiProjectApi.getAllproject((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i3ffa").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
-  );const map = new Map();  data.forEach((item,i) => {
+  );const map = new Map();
+    if( data.length > subDataElements.length){
+      for(let i = 0; i <=  data.length - subDataElements.length; i++){
+        let parentNode = subDataElements[0].parentNode;
+        let child = parentNode.childNodes[0].cloneNode(true);
+        parentNode.appendChild(child);
+        subDataElements.push(child);
+      }
+    }
+    data.forEach((item,i) => {
     if(subDataElements.length > i)
       {
         console.log('There are no inside data elements');

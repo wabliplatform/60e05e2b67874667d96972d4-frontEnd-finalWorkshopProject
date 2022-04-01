@@ -94,27 +94,13 @@ document.getElementById("i4l8rv").onclick = event => {
   );
 });document.getElementById('i7w1n').onclick = (event) => {
     event.preventDefault();
-    project['pImage'] = {
-        data: document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") !== null ? document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") : document.querySelector("[annotationname = 'pImage']").src,
-        name: document.querySelector("[annotationname = 'pImage']").getAttribute("name")
-      };
-      project['pTitle'] = document.querySelector("[annotationname = 'pTitle']").value;project['pEnd'] = document.querySelector("[annotationname = 'pEnd']").value;project['pWebsite'] = document.querySelector("[annotationname = 'pWebsite']").value;project['pStart'] = document.querySelector("[annotationname = 'pStart']").value;project['pDuration'] = document.querySelector("[annotationname = 'pDuration']").value;project['pGA'] = document.querySelector("[annotationname = 'pGA']").value;project["pWorkpackage"] = [...document.querySelector("[annotationname = 'pWorkpackage']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));project["pDeliverable"] = [...document.querySelector("[annotationname = 'pDeliverable']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));project['pAbstract'] = document.querySelector("[annotationname = 'pAbstract']").value;project['pDescription'] = document.querySelector("[annotationname = 'pDescription']").value;apiProjectApi.createproject( project, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {  location.href= '/homePage/'+response.body.query._id+'' ;}}});};window.onload = () => {apiWorkpackageApi.getAllworkpackage((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("if2wp").querySelectorAll( "[dataitem='true']" )].filter(
+    };window.onload = () => {apiWorkpackageApi.getAllworkpackage((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("if2wp").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();  data.forEach((item,i) => {
     if(subDataElements.length > i)
       {
-        try { 
-      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'wName']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].wName;
-        insideSubDataElement.value=data[data.length -i -1]._id;
-      }
-      else if(subDataElements[i].getAttribute('annotationname') === 'wName'){
-        subDataElements[i].textContent = data[data.length -i -1].wName;
-        subDataElements[i].value=data[data.length -i -1]._id;
-      }
-     } catch (e) { console.log(e) };
+        console.log('There are no inside data elements');
         map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
         
       }
@@ -126,7 +112,16 @@ document.getElementById("i4l8rv").onclick = event => {
     [...subDataElements].forEach((element,index) => {if(index >= data.length) subDataElements[index].style.display = 'none';})}});apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("irwjui").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
-  );const map = new Map();  data.forEach((item,i) => {
+  );const map = new Map();
+    if( data.length > subDataElements.length){
+      for(let i = 0; i <=  data.length - subDataElements.length; i++){
+        let parentNode = subDataElements[0].parentNode;
+        let child = parentNode.childNodes[0].cloneNode(true);
+        parentNode.appendChild(child);
+        subDataElements.push(child);
+      }
+    }
+    data.forEach((item,i) => {
     if(subDataElements.length > i)
       {
         try { 
