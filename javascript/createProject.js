@@ -1,4 +1,4 @@
-let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';let apiDeliverableApi = new TempApi.DeliverableApi();let project = new TempApi.Project();document.getElementById('icaj').onclick = (event) => {
+let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src/index';let apiDeliverableApi = new TempApi.DeliverableApi();let apiProjectApi = new TempApi.ProjectApi();let project = new TempApi.Project();document.getElementById('icaj').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/homePage' ;}};document.getElementById('i2lyj').onclick = (event) => {
     event.preventDefault();
@@ -40,7 +40,17 @@ $(
       function () { $("#datepicker").datepicker({format: 'dd-mm-yyyy'}); }
     );$(
       function () { $("#datepicker-2").datepicker({format: 'dd-mm-yyyy'}); }
-    );const arrayiz0j47 = [];
+    );document.addEventListener('alignpWorkpackage', function(e) {
+  const advanceSelect = document.getElementById('i233ss');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});const arrayiz0j47 = [];
 document.getElementById("i2vd9o").onclick = event => {
   event.preventDefault();
   const select = document.getElementById("ic09j9")
@@ -56,7 +66,27 @@ document.getElementById("i2vd9o").onclick = event => {
      e += `<li arrayvalue='${arrayiz0j47[y].value}'>${arrayiz0j47[y].liValue}</li>`;
    }
    document.getElementById("ikh0we").innerHTML = e;
-};const arrayik5phk = [];
+};document.addEventListener('alignpWorkpackage', function(e) {
+  const advanceSelect = document.getElementById('ic09j9');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('alignpDeliverable', function(e) {
+  const advanceSelect = document.getElementById('idovhk');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});const arrayik5phk = [];
 document.getElementById("i4l8rv").onclick = event => {
   event.preventDefault();
   const select = document.getElementById("i19dcl")
@@ -72,7 +102,7 @@ document.getElementById("i4l8rv").onclick = event => {
      e += `<li arrayvalue='${arrayik5phk[y].value}'>${arrayik5phk[y].liValue}</li>`;
    }
    document.getElementById("i10lnu").innerHTML = e;
-};document.addEventListener('alignpWorkpackage', function(e) {
+};document.addEventListener('alignpDeliverable', function(e) {
   const advanceSelect = document.getElementById('i19dcl');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -84,31 +114,7 @@ document.getElementById("i4l8rv").onclick = event => {
   );
 });document.getElementById('i7w1n').onclick = (event) => {
     event.preventDefault();
-    };window.onload = () => {apiProjectApi.getAllproject((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("itsq2w").querySelectorAll( "[dataitem='true']" )].filter(
-    (element, index, array) =>
-    !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
-  );const map = new Map();
-    if( data.length > subDataElements.length){
-      for(let i = 0; i <=  data.length - subDataElements.length; i++){
-        let parentNode = subDataElements[0].parentNode;
-        let child = parentNode.childNodes[0].cloneNode(true);
-        parentNode.appendChild(child);
-        subDataElements.push(child);
-      }
-    }
-    data.forEach((item,i) => {
-    if(subDataElements.length > i)
-      {
-        console.log('There are no inside data elements');
-        map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
-        
-      }
-      
-    });
-
-    window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
-    
-    [...subDataElements].forEach((element,index) => {if(index >= data.length) subDataElements[index].style.display = 'none';})}});apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i9slgj").querySelectorAll( "[dataitem='true']" )].filter(
+    };window.onload = () => {apiWorkpackageApi.getAllworkpackage((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("itsq2w").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();
@@ -138,6 +144,40 @@ document.getElementById("i4l8rv").onclick = event => {
         
       }
       document.dispatchEvent(new Event("alignpWorkpackage"))
+    });
+
+    window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
+    
+    [...subDataElements].forEach((element,index) => {if(index >= data.length) subDataElements[index].style.display = 'none';})}});apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i9slgj").querySelectorAll( "[dataitem='true']" )].filter(
+    (element, index, array) =>
+    !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
+  );const map = new Map();
+    if( data.length > subDataElements.length){
+      for(let i = 0; i <=  data.length - subDataElements.length; i++){
+        let parentNode = subDataElements[0].parentNode;
+        let child = parentNode.childNodes[0].cloneNode(true);
+        parentNode.appendChild(child);
+        subDataElements.push(child);
+      }
+    }
+    data.forEach((item,i) => {
+    if(subDataElements.length > i)
+      {
+        try { 
+      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'dName']");
+      if(insideSubDataElement !== null){
+        insideSubDataElement.textContent = data[data.length -i -1].dName;
+        insideSubDataElement.value=data[data.length -i -1]._id;
+      }
+      else if(subDataElements[i].getAttribute('annotationname') === 'dName'){
+        subDataElements[i].textContent = data[data.length -i -1].dName;
+        subDataElements[i].value=data[data.length -i -1]._id;
+      }
+     } catch (e) { console.log(e) };
+        map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
+        
+      }
+      document.dispatchEvent(new Event("alignpDeliverable"))
     });
 
     window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
