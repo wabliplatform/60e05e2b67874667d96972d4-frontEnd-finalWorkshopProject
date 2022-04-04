@@ -51,7 +51,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
           }
         });
       }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/homePage' ;}}});};document.getElementById('iquq4i').onclick = (event) => {
+    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/homePage' ;}}});};document.getElementById('i3tepm').onclick = (event) => {
+    event.preventDefault();
+    { history.back(); }};document.getElementById('iquq4i').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
