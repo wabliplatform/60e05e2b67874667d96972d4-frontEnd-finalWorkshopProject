@@ -46,7 +46,7 @@ document.addEventListener('aligneProject', function(e) {
         optionElement.setAttribute("selected", true);
     }
   );
-});const arrayi7iaf = [];
+});let arrayi7iaf = [];
 document.getElementById("i5zsp").onclick = event => {
   event.preventDefault();
   const select = document.getElementById("i1k2c")
@@ -56,13 +56,32 @@ document.getElementById("i5zsp").onclick = event => {
   });
   select.value = "";
   select.selectedIndex = 0;
-    let e=``;
-   for (let y=0; y<arrayi7iaf.length; y++)
-   {
-     e += `<li arrayvalue='${arrayi7iaf[y].value}'>${arrayi7iaf[y].liValue}</li>`;
-   }
-   document.getElementById("itv8a").innerHTML = e;
-};document.getElementById('i1wf6').onclick = (event) => {
+  refreshULitv8a();
+};
+
+function refreshULitv8a() {
+let e=``;
+for (let y=0; y<arrayi7iaf.length; y++)
+ {
+   e += `<li index='${y}' arrayvalue='${arrayi7iaf[y].value}'><p style="display: inline-block">${arrayi7iaf[y].liValue}</p><button class="btn btn-primary" style="display: inline-block;float: right;" index='${y}'>-</button></li>`;
+ }
+document.getElementById("itv8a").innerHTML = e;
+}
+
+document.getElementById("itv8a").addEventListener("click", event => {
+  event.preventDefault();
+  arrayi7iaf = arrayi7iaf.filter(
+    (item, index) => +event.target.getAttribute("index") !== index
+  );
+  refreshULitv8a();
+});
+function initializearrayi7iaf(data) {
+  arrayi7iaf = data.map(item => ({
+    value: item._id,
+    liValue: item['pTitle']
+  }));
+}
+document.getElementById('i1wf6').onclick = (event) => {
     event.preventDefault();
     employee['eName'] = document.querySelector("[annotationname = 'eName']").value;employee['eSurname'] = document.querySelector("[annotationname = 'eSurname']").value;employee['eImage'] = document.querySelector("[annotationname = 'eImage']").value;employee["eProject"] = [...document.querySelector("[annotationname = 'eProject']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));apiEmployeeApi.createemployee( employee, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {  location.href= '/homePage/'+response.body.query._id+'' ;}}});};window.onload = () => {apiProjectApi.getAllproject((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i3ffa").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>

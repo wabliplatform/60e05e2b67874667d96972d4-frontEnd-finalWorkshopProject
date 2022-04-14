@@ -50,7 +50,7 @@ $(
         optionElement.setAttribute("selected", true);
     }
   );
-});const arrayiz0j47 = [];
+});let arrayiz0j47 = [];
 document.getElementById("i2vd9o").onclick = event => {
   event.preventDefault();
   const select = document.getElementById("ic09j9")
@@ -60,13 +60,32 @@ document.getElementById("i2vd9o").onclick = event => {
   });
   select.value = "";
   select.selectedIndex = 0;
-    let e=``;
-   for (let y=0; y<arrayiz0j47.length; y++)
-   {
-     e += `<li arrayvalue='${arrayiz0j47[y].value}'>${arrayiz0j47[y].liValue}</li>`;
-   }
-   document.getElementById("ikh0we").innerHTML = e;
-};document.addEventListener('alignpWorkpackage', function(e) {
+  refreshULikh0we();
+};
+
+function refreshULikh0we() {
+let e=``;
+for (let y=0; y<arrayiz0j47.length; y++)
+ {
+   e += `<li index='${y}' arrayvalue='${arrayiz0j47[y].value}'><p style="display: inline-block">${arrayiz0j47[y].liValue}</p><button class="btn btn-primary" style="display: inline-block;float: right;" index='${y}'>-</button></li>`;
+ }
+document.getElementById("ikh0we").innerHTML = e;
+}
+
+document.getElementById("ikh0we").addEventListener("click", event => {
+  event.preventDefault();
+  arrayiz0j47 = arrayiz0j47.filter(
+    (item, index) => +event.target.getAttribute("index") !== index
+  );
+  refreshULikh0we();
+});
+function initializearrayiz0j47(data) {
+  arrayiz0j47 = data.map(item => ({
+    value: item._id,
+    liValue: item['wName']
+  }));
+}
+document.addEventListener('alignpWorkpackage', function(e) {
   const advanceSelect = document.getElementById('ic09j9');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -86,7 +105,7 @@ document.getElementById("i2vd9o").onclick = event => {
         optionElement.setAttribute("selected", true);
     }
   );
-});const arrayik5phk = [];
+});let arrayik5phk = [];
 document.getElementById("i4l8rv").onclick = event => {
   event.preventDefault();
   const select = document.getElementById("i19dcl")
@@ -96,13 +115,32 @@ document.getElementById("i4l8rv").onclick = event => {
   });
   select.value = "";
   select.selectedIndex = 0;
-    let e=``;
-   for (let y=0; y<arrayik5phk.length; y++)
-   {
-     e += `<li arrayvalue='${arrayik5phk[y].value}'>${arrayik5phk[y].liValue}</li>`;
-   }
-   document.getElementById("i10lnu").innerHTML = e;
-};document.addEventListener('alignpDeliverable', function(e) {
+  refreshULi10lnu();
+};
+
+function refreshULi10lnu() {
+let e=``;
+for (let y=0; y<arrayik5phk.length; y++)
+ {
+   e += `<li index='${y}' arrayvalue='${arrayik5phk[y].value}'><p style="display: inline-block">${arrayik5phk[y].liValue}</p><button class="btn btn-primary" style="display: inline-block;float: right;" index='${y}'>-</button></li>`;
+ }
+document.getElementById("i10lnu").innerHTML = e;
+}
+
+document.getElementById("i10lnu").addEventListener("click", event => {
+  event.preventDefault();
+  arrayik5phk = arrayik5phk.filter(
+    (item, index) => +event.target.getAttribute("index") !== index
+  );
+  refreshULi10lnu();
+});
+function initializearrayik5phk(data) {
+  arrayik5phk = data.map(item => ({
+    value: item._id,
+    liValue: item['dName']
+  }));
+}
+document.addEventListener('alignpDeliverable', function(e) {
   const advanceSelect = document.getElementById('i19dcl');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
