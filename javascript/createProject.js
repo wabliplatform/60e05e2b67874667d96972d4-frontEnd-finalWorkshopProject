@@ -1,23 +1,36 @@
 let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src/index';let apiDeliverableApi = new TempApi.DeliverableApi();let apiProjectApi = new TempApi.ProjectApi();let project = new TempApi.Project();document.getElementById('icaj').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/homePage' ;}};document.getElementById('i2lyj').onclick = (event) => {
+    {   location.href= '/homePage' ;}};document.getElementById('i2lyj').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createWorkpackage' ;}};document.getElementById('i4jic').onclick = (event) => {
+    {   location.href= '/createWorkpackage' ;}};document.getElementById('i4jic').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createEmployee' ;}};document.getElementById('ix1q7').onclick = (event) => {
+    {   location.href= '/createEmployee' ;}};document.getElementById('ix1q7').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createDeliverable' ;}};document.getElementById('i35mv3').onclick = (event) => {
+    {   location.href= '/createDeliverable' ;}};document.getElementById('i35mv3').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewEmployees' ;}};document.getElementById('itbh9i').onclick = (event) => {
+    {   location.href= '/viewEmployees' ;}};document.getElementById('itbh9i').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};document.getElementById('ie6a5').onclick = (event) => {
+    {   location.href= '/viewWorkpackages' ;}};document.getElementById('ie6a5').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewDeliverables' ;}};
- const uploadImage = async (event) => {
-        const file = event.target.files[0];
-        const base64 = await convertBase64(file);
-        return base64;
-      };const convertBase64 = (file) => {
+    {   location.href= '/viewDeliverables' ;}};
+ function calculateSize(img, maxWidth, maxHeight) {
+      let width = img.width;
+      let height = img.height;
+    
+      // calculate the width and height, constraining the proportions
+      if (width > height) {
+        if (width > maxWidth) {
+          height = Math.round((height * maxWidth) / width);
+          width = maxWidth;
+        }
+      } else {
+        if (height > maxHeight) {
+          width = Math.round((width * maxHeight) / height);
+          height = maxHeight;
+        }
+      }
+      return [width, height];
+    }const convertBase64 = (file) => {
           return new Promise((resolve, reject) => {
             const fileReader = new FileReader();
             fileReader.readAsDataURL(file);
@@ -32,10 +45,42 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           });
         };
 document.getElementById('formFile').addEventListener("change", async(e) => {
-            let imageBase64 = await uploadImage(e);
-        document.getElementById('formFile').setAttribute('data-image-base64' ,imageBase64);
-        document.getElementById('formFile').setAttribute('name',e.target.files[0].name)
-        });
+            
+      const MAX_WIDTH = 300;
+      const MAX_HEIGHT = 300;
+      const MIME_TYPE = "image/jpeg";
+      const QUALITY = 0.9;
+      const file = e.target.files[0]; // get the file
+      const blobURL = URL.createObjectURL(file);
+      const img = new Image();
+      img.src = blobURL;
+      img.onerror = function () {
+        URL.revokeObjectURL(this.src);
+        console.log("Cannot load image");
+      };
+      img.onload = function () {
+        URL.revokeObjectURL(this.src);
+        const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+        const canvas = document.createElement("canvas");
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, newWidth, newHeight);
+        canvas.toBlob(
+          async (blob) => {
+            const base64 = await convertBase64(blob);
+    
+            document
+              .getElementById('formFile')
+              .setAttribute("data-image-base64", base64);
+            document
+              .getElementById('formFile')
+              .setAttribute("name", e.target.files[0].name);
+          },
+          MIME_TYPE,
+          QUALITY
+        );
+      };});
 $(
       function () { $("#datepicker").datepicker({format: 'dd-mm-yyyy'}); }
     );$(
@@ -67,7 +112,7 @@ function refreshULikh0we() {
 let e=``;
 for (let y=0; y<arrayiz0j47.length; y++)
  {
-   e += `<li index='${y}' arrayvalue='${arrayiz0j47[y].value}'><p style="display: inline-block">${arrayiz0j47[y].liValue}</p><button class="btn btn-primary" style="display: inline-block;float: right;" index='${y}'>-</button></li>`;
+   e += `<li index='${y}' arrayvalue='${arrayiz0j47[y].value}'><p style="display: inline-block">${arrayiz0j47[y].liValue}</p><button class="btn pointer bi bi-trash delete-btn" style="display: inline-block;float: right;background-color: red;color: white;" index='${y}'>&nbsp;Delete</button></li>`;
  }
 document.getElementById("ikh0we").innerHTML = e;
 }
@@ -122,7 +167,7 @@ function refreshULi10lnu() {
 let e=``;
 for (let y=0; y<arrayik5phk.length; y++)
  {
-   e += `<li index='${y}' arrayvalue='${arrayik5phk[y].value}'><p style="display: inline-block">${arrayik5phk[y].liValue}</p><button class="btn btn-primary" style="display: inline-block;float: right;" index='${y}'>-</button></li>`;
+   e += `<li index='${y}' arrayvalue='${arrayik5phk[y].value}'><p style="display: inline-block">${arrayik5phk[y].liValue}</p><button class="btn pointer bi bi-trash delete-btn" style="display: inline-block;float: right;background-color: red;color: white;" index='${y}'>&nbsp;Delete</button></li>`;
  }
 document.getElementById("i10lnu").innerHTML = e;
 }

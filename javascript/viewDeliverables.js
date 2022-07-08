@@ -1,18 +1,18 @@
 let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src/index';document.getElementById('i3hm').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/homePage' ;}};document.getElementById('iuegv').onclick = (event) => {
+    {   location.href= '/homePage' ;}};document.getElementById('iuegv').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createProject' ;}};document.getElementById('iaw4g').onclick = (event) => {
+    {   location.href= '/createProject' ;}};document.getElementById('iaw4g').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createWorkpackage' ;}};document.getElementById('ika04e').onclick = (event) => {
+    {   location.href= '/createWorkpackage' ;}};document.getElementById('ika04e').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createEmployee' ;}};document.getElementById('i0us1').onclick = (event) => {
+    {   location.href= '/createEmployee' ;}};document.getElementById('i0us1').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createDeliverable' ;}};document.getElementById('ilqkve').onclick = (event) => {
+    {   location.href= '/createDeliverable' ;}};document.getElementById('ilqkve').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewEmployees' ;}};document.getElementById('iensmm').onclick = (event) => {
+    {   location.href= '/viewEmployees' ;}};document.getElementById('iensmm').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};const onClickPaginationButton = (chunk, pagination) => {
+    {   location.href= '/viewWorkpackages' ;}};const onClickPaginationButton = (chunk, pagination) => {
     for (let i = 0; i < pagination.children.length; i++) {
       if (
         pagination.children[i].classList.value.includes("active") === true
@@ -124,13 +124,14 @@ let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src
     }
   document.getElementById('iqjth').onclick = (event) => {
     event.preventDefault();
-    { 
+    {  
       let transitionId = window.location.href.split('/').at(-1);
       let parentId = "";
       const storedData = window.localStorage.getItem("data");
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("iqjth")) === true &&
@@ -159,15 +160,16 @@ let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src
           }
         });
       }
-    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('i9jmi8').onclick = (event) => {
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/viewDeliverables' ;}}});};document.getElementById('i9jmi8').onclick = (event) => {
     event.preventDefault();
-    { 
+    {  
       let transitionId = window.location.href.split('/').at(-1);
       let parentId = "";
       const storedData = window.localStorage.getItem("data");
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("i9jmi8")) === true &&
@@ -196,15 +198,16 @@ let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src
           }
         });
       }
-    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('i9ufzl').onclick = (event) => {
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/viewDeliverables' ;}}});};document.getElementById('i9ufzl').onclick = (event) => {
     event.preventDefault();
-    { 
+    {  
       let transitionId = window.location.href.split('/').at(-1);
       let parentId = "";
       const storedData = window.localStorage.getItem("data");
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("i9ufzl")) === true &&
@@ -233,15 +236,16 @@ let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src
           }
         });
       }
-    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('issrks').onclick = (event) => {
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/viewDeliverables' ;}}});};document.getElementById('issrks').onclick = (event) => {
     event.preventDefault();
-    { 
+    {  
       let transitionId = window.location.href.split('/').at(-1);
       let parentId = "";
       const storedData = window.localStorage.getItem("data");
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("issrks")) === true &&
@@ -270,15 +274,16 @@ let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src
           }
         });
       }
-    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('ittfs').onclick = (event) => {
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/viewDeliverables' ;}}});};document.getElementById('ittfs').onclick = (event) => {
     event.preventDefault();
-    { 
+    {  
       let transitionId = window.location.href.split('/').at(-1);
       let parentId = "";
       const storedData = window.localStorage.getItem("data");
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("ittfs")) === true &&
@@ -307,7 +312,7 @@ let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src
           }
         });
       }
-    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};window.onload = () => {apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i1r9f").querySelectorAll( "[dataitem='true']" )].filter(
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/viewDeliverables' ;}}});};window.onload = () => {apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i1r9f").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();let chunk = 1;  data.forEach((item,i) => {

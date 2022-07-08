@@ -1,23 +1,36 @@
 let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';let apiEmployeeApi = new TempApi.EmployeeApi();let employee = new TempApi.Employee();document.getElementById('i8nj').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/homePage' ;}};document.getElementById('i6sjj').onclick = (event) => {
+    {   location.href= '/homePage' ;}};document.getElementById('i6sjj').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createProject' ;}};document.getElementById('iq041').onclick = (event) => {
+    {   location.href= '/createProject' ;}};document.getElementById('iq041').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createWorkpackage' ;}};document.getElementById('i4ual').onclick = (event) => {
+    {   location.href= '/createWorkpackage' ;}};document.getElementById('i4ual').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createDeliverable' ;}};document.getElementById('inokz').onclick = (event) => {
+    {   location.href= '/createDeliverable' ;}};document.getElementById('inokz').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewEmployees' ;}};document.getElementById('iyark').onclick = (event) => {
+    {   location.href= '/viewEmployees' ;}};document.getElementById('iyark').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};document.getElementById('i63k3').onclick = (event) => {
+    {   location.href= '/viewWorkpackages' ;}};document.getElementById('i63k3').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewDeliverables' ;}};
- const uploadImage = async (event) => {
-        const file = event.target.files[0];
-        const base64 = await convertBase64(file);
-        return base64;
-      };const convertBase64 = (file) => {
+    {   location.href= '/viewDeliverables' ;}};
+ function calculateSize(img, maxWidth, maxHeight) {
+      let width = img.width;
+      let height = img.height;
+    
+      // calculate the width and height, constraining the proportions
+      if (width > height) {
+        if (width > maxWidth) {
+          height = Math.round((height * maxWidth) / width);
+          width = maxWidth;
+        }
+      } else {
+        if (height > maxHeight) {
+          width = Math.round((width * maxHeight) / height);
+          height = maxHeight;
+        }
+      }
+      return [width, height];
+    }const convertBase64 = (file) => {
           return new Promise((resolve, reject) => {
             const fileReader = new FileReader();
             fileReader.readAsDataURL(file);
@@ -32,10 +45,42 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
           });
         };
 document.getElementById('formFile').addEventListener("change", async(e) => {
-            let imageBase64 = await uploadImage(e);
-        document.getElementById('formFile').setAttribute('data-image-base64' ,imageBase64);
-        document.getElementById('formFile').setAttribute('name',e.target.files[0].name)
-        });
+            
+      const MAX_WIDTH = 300;
+      const MAX_HEIGHT = 300;
+      const MIME_TYPE = "image/jpeg";
+      const QUALITY = 0.9;
+      const file = e.target.files[0]; // get the file
+      const blobURL = URL.createObjectURL(file);
+      const img = new Image();
+      img.src = blobURL;
+      img.onerror = function () {
+        URL.revokeObjectURL(this.src);
+        console.log("Cannot load image");
+      };
+      img.onload = function () {
+        URL.revokeObjectURL(this.src);
+        const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+        const canvas = document.createElement("canvas");
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, newWidth, newHeight);
+        canvas.toBlob(
+          async (blob) => {
+            const base64 = await convertBase64(blob);
+    
+            document
+              .getElementById('formFile')
+              .setAttribute("data-image-base64", base64);
+            document
+              .getElementById('formFile')
+              .setAttribute("name", e.target.files[0].name);
+          },
+          MIME_TYPE,
+          QUALITY
+        );
+      };});
 document.addEventListener('aligneProject', function(e) {
   const advanceSelect = document.getElementById('i7ttv');
   const selectedElement = advanceSelect.getAttribute('selected-element');
@@ -63,7 +108,7 @@ function refreshULitv8a() {
 let e=``;
 for (let y=0; y<arrayi7iaf.length; y++)
  {
-   e += `<li index='${y}' arrayvalue='${arrayi7iaf[y].value}'><p style="display: inline-block">${arrayi7iaf[y].liValue}</p><button class="btn btn-primary" style="display: inline-block;float: right;" index='${y}'>-</button></li>`;
+   e += `<li index='${y}' arrayvalue='${arrayi7iaf[y].value}'><p style="display: inline-block">${arrayi7iaf[y].liValue}</p><button class="btn pointer bi bi-trash delete-btn" style="display: inline-block;float: right;background-color: red;color: white;" index='${y}'>&nbsp;Delete</button></li>`;
  }
 document.getElementById("itv8a").innerHTML = e;
 }
@@ -83,7 +128,7 @@ function initializearrayi7iaf(data) {
 }
 document.getElementById('i1wf6').onclick = (event) => {
     event.preventDefault();
-    employee['eName'] = document.querySelector("[annotationname = 'eName']").value;employee['eSurname'] = document.querySelector("[annotationname = 'eSurname']").value;employee['eImage'] = document.querySelector("[annotationname = 'eImage']").value;employee["eProject"] = [...document.querySelector("[annotationname = 'eProject']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));apiEmployeeApi.createemployee( employee, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {  location.href= '/homePage/'+response.body.query._id+'' ;}}});};window.onload = () => {apiProjectApi.getAllproject((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i3ffa").querySelectorAll( "[dataitem='true']" )].filter(
+    employee['eName'] = document.querySelector("[annotationname = 'eName']").value;employee['eSurname'] = document.querySelector("[annotationname = 'eSurname']").value;employee['eImage'] = document.querySelector("[annotationname = 'eImage']").value;employee["eProject"] = [...document.querySelector("[annotationname = 'eProject']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));apiEmployeeApi.createemployee( employee, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {   location.href= '/homePage' ;}}});};window.onload = () => {apiProjectApi.getAllproject((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i3ffa").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();

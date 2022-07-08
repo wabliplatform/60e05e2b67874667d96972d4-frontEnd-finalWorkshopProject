@@ -14,6 +14,8 @@ module.exports = {
 	'createEmployee' : './javascript/createEmployee.js',
 	'viewEmployees' : './javascript/viewEmployees.js',
 	'viewWorkpackages' : './javascript/viewWorkpackages.js',
+	'Dashboard' : './javascript/Dashboard.js',
+	'count' : './javascript/count.js',
 },
   output: {
     path: path.resolve(__dirname, 'dist'),
