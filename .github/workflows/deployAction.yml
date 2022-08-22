@@ -14,6 +14,6 @@ jobs:
           password: ${{ secrets.WABLI_SERVER_SSH_PASSWORD }}
           port: ${{ secrets.WABLI_SERVER_SSH_PORT }}
           script: >-
-            ./wabli-applications/deploy.sh -b main -d miniature-parakeet -r
+            ./wabli-applications/deploy.sh -b main -d local-host -r
             https://github.com/wabliplatform/60e05e2b67874667d96972d4-frontEnd-finalWorkshopProject.git
-            -f 60e05e2b67874667d96972d4-frontEnd-finalWorkshopProject -p 3202
+            -f 60e05e2b67874667d96972d4-frontEnd-finalWorkshopProject -p 8080
