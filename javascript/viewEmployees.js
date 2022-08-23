@@ -169,7 +169,26 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
         }
       }
     }
-  document.getElementById('i28g0o').onclick = (event) => {
+  document.getElementById('irlubk').onclick = (event) => {
+    event.preventDefault();
+    {  
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document.getElementById(key) !== null &&
+          document
+            .getElementById(key)
+            .contains(document.getElementById("irlubk")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateEmployee/' + transitionId;}};document.getElementById('i28g0o').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -226,7 +245,7 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iyuo9v').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('ir561v').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -238,14 +257,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("iyuo9v")) === true &&
+            .contains(document.getElementById("ir561v")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ilhapl').onclick = (event) => {
+     location.href= '/updateEmployee/' + transitionId;}};document.getElementById('iozr6g').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -257,14 +276,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("ilhapl")) === true &&
+            .contains(document.getElementById("iozr6g")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iqhshh').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('iw3bdf').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -276,14 +295,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("iqhshh")) === true &&
+            .contains(document.getElementById("iw3bdf")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iqduy5').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('ihasew').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -295,14 +314,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("iqduy5")) === true &&
+            .contains(document.getElementById("ihasew")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('isxrjj').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('inh336').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -314,14 +333,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("isxrjj")) === true &&
+            .contains(document.getElementById("inh336")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i2qdj7').onclick = (event) => {
+     location.href= '/updateEmployee/' + transitionId;}};document.getElementById('indxtt').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -333,14 +352,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("i2qdj7")) === true &&
+            .contains(document.getElementById("indxtt")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ix04s3').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i3djtx').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -352,14 +371,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("ix04s3")) === true &&
+            .contains(document.getElementById("i3djtx")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iqr44n').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('ifq2qo').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -371,14 +390,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("iqr44n")) === true &&
+            .contains(document.getElementById("ifq2qo")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ipahwi').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('ibkx0z').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -390,14 +409,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("ipahwi")) === true &&
+            .contains(document.getElementById("ibkx0z")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iykjnj').onclick = (event) => {
+     location.href= '/updateEmployee/' + transitionId;}};document.getElementById('idfa9w').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -409,14 +428,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("iykjnj")) === true &&
+            .contains(document.getElementById("idfa9w")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iripfu').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('ivtpz3').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -428,14 +447,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("iripfu")) === true &&
+            .contains(document.getElementById("ivtpz3")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ih07mb').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('ilc9tf').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -447,14 +466,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("ih07mb")) === true &&
+            .contains(document.getElementById("ilc9tf")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i2v99b').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('ii1j7h').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -466,14 +485,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("i2v99b")) === true &&
+            .contains(document.getElementById("ii1j7h")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ic6f9z').onclick = (event) => {
+     location.href= '/updateEmployee/' + transitionId;}};document.getElementById('i1tnks').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -485,14 +504,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("ic6f9z")) === true &&
+            .contains(document.getElementById("i1tnks")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('idyt9u').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i6wu5a').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -504,14 +523,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("idyt9u")) === true &&
+            .contains(document.getElementById("i6wu5a")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i020lf').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('iue95s').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -523,14 +542,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("i020lf")) === true &&
+            .contains(document.getElementById("iue95s")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iz95pj').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('ivwy9j').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -542,14 +561,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("iz95pj")) === true &&
+            .contains(document.getElementById("ivwy9j")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i5z4iy').onclick = (event) => {
+     location.href= '/updateEmployee/' + transitionId;}};document.getElementById('i80rxp').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -561,14 +580,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("i5z4iy")) === true &&
+            .contains(document.getElementById("i80rxp")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('id18fm').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i9fooi').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -580,14 +599,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("id18fm")) === true &&
+            .contains(document.getElementById("i9fooi")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ig4q0b').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('ig09of').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -599,14 +618,14 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("ig4q0b")) === true &&
+            .contains(document.getElementById("ig09of")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ic33pi').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('iewl8n').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -618,7 +637,140 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("ic33pi")) === true &&
+            .contains(document.getElementById("iewl8n")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateEmployee/' + transitionId;}};document.getElementById('ij6ukd').onclick = (event) => {
+    event.preventDefault();
+    {  
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document.getElementById(key) !== null &&
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ij6ukd")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i4n3d8').onclick = (event) => {
+    event.preventDefault();
+    {  
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document.getElementById(key) !== null &&
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i4n3d8")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i8lm1h').onclick = (event) => {
+    event.preventDefault();
+    {  
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document.getElementById(key) !== null &&
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i8lm1h")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('irljg').onclick = (event) => {
+    event.preventDefault();
+    {  
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document.getElementById(key) !== null &&
+          document
+            .getElementById(key)
+            .contains(document.getElementById("irljg")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateEmployee/' + transitionId;}};document.getElementById('ihedsf').onclick = (event) => {
+    event.preventDefault();
+    {  
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document.getElementById(key) !== null &&
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ihedsf")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i51u9c').onclick = (event) => {
+    event.preventDefault();
+    {  
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document.getElementById(key) !== null &&
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i51u9c")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i7ituw').onclick = (event) => {
+    event.preventDefault();
+    {  
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document.getElementById(key) !== null &&
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i7ituw")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;

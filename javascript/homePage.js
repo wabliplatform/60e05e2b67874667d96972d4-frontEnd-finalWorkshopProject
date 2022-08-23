@@ -141,26 +141,7 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iosrcj').onclick = (event) => {
-    event.preventDefault();
-    let projectId = window.location.pathname.replace('/homePage/','');
-      if(projectId === '/homePage' || projectId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("iosrcj")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            projectId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/homePage' ;}}});};document.getElementById('io48n9').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('io48n9').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -179,26 +160,7 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ivybui').onclick = (event) => {
-    event.preventDefault();
-    let projectId = window.location.pathname.replace('/homePage/','');
-      if(projectId === '/homePage' || projectId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("ivybui")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            projectId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/homePage' ;}}});};document.getElementById('ihjac6').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('ihjac6').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -217,26 +179,7 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ie7ibo').onclick = (event) => {
-    event.preventDefault();
-    let projectId = window.location.pathname.replace('/homePage/','');
-      if(projectId === '/homePage' || projectId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("ie7ibo")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            projectId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/homePage' ;}}});};document.getElementById('iqoqh').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('iqoqh').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -255,26 +198,7 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ihcduh').onclick = (event) => {
-    event.preventDefault();
-    let projectId = window.location.pathname.replace('/homePage/','');
-      if(projectId === '/homePage' || projectId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("ihcduh")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            projectId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/homePage' ;}}});};document.getElementById('iihxj').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('iihxj').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -293,26 +217,7 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iwljo').onclick = (event) => {
-    event.preventDefault();
-    let projectId = window.location.pathname.replace('/homePage/','');
-      if(projectId === '/homePage' || projectId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("iwljo")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            projectId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/homePage' ;}}});};document.getElementById('inppv').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('inppv').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -331,26 +236,7 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ie4ja').onclick = (event) => {
-    event.preventDefault();
-    let projectId = window.location.pathname.replace('/homePage/','');
-      if(projectId === '/homePage' || projectId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("ie4ja")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            projectId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/homePage' ;}}});};window.onload = () => {apiProjectApi.getAllproject((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i10ef").querySelectorAll( "[dataitem='true']" )].filter(
+     location.href= '/viewProject/' + transitionId;}};window.onload = () => {apiProjectApi.getAllproject((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i10ef").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();let chunk = 1;  data.forEach((item,i) => {

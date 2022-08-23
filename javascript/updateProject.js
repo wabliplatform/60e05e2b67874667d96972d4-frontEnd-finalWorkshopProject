@@ -315,6 +315,45 @@ document.addEventListener('alignpDeliverable', function(e) {
           response.body.query.pDeliverable
         );
       }
+     } catch (e) { console.log(e) };try { 
+        document.querySelector('[annotationname = pEmployee]').setAttribute('selected-element',response.body.query.pEmployee.undefined);
+        const insideSubdocument = document.querySelector("[annotationname = 'pEmployee']");
+        if (insideSubdocument !==null) {
+          const tableData = response.body.query.pEmployee;
+    
+    const tableDataElement = insideSubdocument.querySelectorAll("[dataitem='true']");
+    tableData.forEach((data,index) => {
+      if(tableDataElement.length < index) {
+        return;
+      }
+      
+      
+      map.set(
+        tableDataElement[index].getAttribute("id"),
+        tableData[tableData.length - index -1]
+      );
+    
+    });
+    
+      [...tableDataElement].forEach((element, index) => {
+        if (index >= tableData.length) {
+          tableDataElement[index].style.display = "none";
+        }
+        else {
+          tableDataElement[index].style.display = "";
+        }
+      });
+    
+    
+        }
+      if(response.body.query.pEmployee._id){
+        map.set(
+          document.querySelector(
+            "[annotationname = 'pEmployee']"
+          ).getAttribute("id"),
+          response.body.query.pEmployee
+        );
+      }
      } catch (e) { console.log(e) };window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));}});apiWorkpackageApi.getAllworkpackage((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("itsq2w").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)

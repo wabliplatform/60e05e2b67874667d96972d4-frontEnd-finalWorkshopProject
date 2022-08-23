@@ -52,9 +52,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
           }
         });
       }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/homePage' ;}}});};document.getElementById('i3tepm').onclick = (event) => {
-    event.preventDefault();
-    { history.back(); }};document.getElementById('iquq4i').onclick = (event) => {
+    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{   location.href= '/homePage' ;}}});};document.getElementById('iquq4i').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -346,6 +344,45 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
             "[annotationname = 'pDeliverable']"
           ).getAttribute("id"),
           response.body.query.pDeliverable
+        );
+      }
+     } catch (e) { console.log(e) };try { 
+        document.querySelector('[annotationname = pEmployee]').setAttribute('selected-element',response.body.query.pEmployee.undefined);
+        const insideSubdocument = document.querySelector("[annotationname = 'pEmployee']");
+        if (insideSubdocument !==null) {
+          const tableData = response.body.query.pEmployee;
+    
+    const tableDataElement = insideSubdocument.querySelectorAll("[dataitem='true']");
+    tableData.forEach((data,index) => {
+      if(tableDataElement.length < index) {
+        return;
+      }
+      
+      
+      map.set(
+        tableDataElement[index].getAttribute("id"),
+        tableData[tableData.length - index -1]
+      );
+    
+    });
+    
+      [...tableDataElement].forEach((element, index) => {
+        if (index >= tableData.length) {
+          tableDataElement[index].style.display = "none";
+        }
+        else {
+          tableDataElement[index].style.display = "";
+        }
+      });
+    
+    
+        }
+      if(response.body.query.pEmployee._id){
+        map.set(
+          document.querySelector(
+            "[annotationname = 'pEmployee']"
+          ).getAttribute("id"),
+          response.body.query.pEmployee
         );
       }
      } catch (e) { console.log(e) };window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));}});};
