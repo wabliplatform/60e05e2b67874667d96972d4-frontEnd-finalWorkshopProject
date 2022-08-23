@@ -1,4 +1,4 @@
-let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src/index';let apiDeliverableApi = new TempApi.DeliverableApi();let apiProjectApi = new TempApi.ProjectApi();let project = new TempApi.Project();document.getElementById('icaj').onclick = (event) => {
+let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src/index';let apiProjectApi = new TempApi.ProjectApi();let project = new TempApi.Project();document.getElementById('icaj').onclick = (event) => {
     event.preventDefault();
     {   location.href= '/homePage' ;}};document.getElementById('i2lyj').onclick = (event) => {
     event.preventDefault();
@@ -85,72 +85,7 @@ $(
       function () { $("#datepicker").datepicker({format: 'dd-mm-yyyy'}); }
     );$(
       function () { $("#datepicker-2").datepicker({format: 'dd-mm-yyyy'}); }
-    );document.addEventListener('alignpWorkpackage', function(e) {
-  const advanceSelect = document.getElementById('i233ss');
-  const selectedElement = advanceSelect.getAttribute('selected-element');
-  if (!selectedElement) return;
-  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
-    optionElement => {
-      if (optionElement.value === selectedElement)
-        optionElement.setAttribute("selected", true);
-    }
-  );
-});let arrayiz0j47 = [];
-document.getElementById("i2vd9o").onclick = event => {
-  event.preventDefault();
-  const select = document.getElementById("ic09j9")
-  arrayiz0j47.push({
-      value: select.value,
-      liValue: select.selectedOptions[0].textContent
-  });
-  select.value = "";
-  select.selectedIndex = 0;
-  refreshULikh0we();
-};
-
-function refreshULikh0we() {
-let e=``;
-for (let y=0; y<arrayiz0j47.length; y++)
- {
-   e += `<li index='${y}' arrayvalue='${arrayiz0j47[y].value}'><p style="display: inline-block">${arrayiz0j47[y].liValue}</p><button class="btn pointer bi bi-trash delete-btn" style="display: inline-block;float: right;background-color: red;color: white;" index='${y}'>&nbsp;Delete</button></li>`;
- }
-document.getElementById("ikh0we").innerHTML = e;
-}
-
-document.getElementById("ikh0we").addEventListener("click", event => {
-  event.preventDefault();
-  arrayiz0j47 = arrayiz0j47.filter(
-    (item, index) => +event.target.getAttribute("index") !== index
-  );
-  refreshULikh0we();
-});
-function initializearrayiz0j47(data) {
-  arrayiz0j47 = data.map(item => ({
-    value: item._id,
-    liValue: item['wName']
-  }));
-}
-document.addEventListener('alignpWorkpackage', function(e) {
-  const advanceSelect = document.getElementById('ic09j9');
-  const selectedElement = advanceSelect.getAttribute('selected-element');
-  if (!selectedElement) return;
-  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
-    optionElement => {
-      if (optionElement.value === selectedElement)
-        optionElement.setAttribute("selected", true);
-    }
-  );
-});document.addEventListener('alignpDeliverable', function(e) {
-  const advanceSelect = document.getElementById('idovhk');
-  const selectedElement = advanceSelect.getAttribute('selected-element');
-  if (!selectedElement) return;
-  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
-    optionElement => {
-      if (optionElement.value === selectedElement)
-        optionElement.setAttribute("selected", true);
-    }
-  );
-});let arrayik5phk = [];
+    );let arrayik5phk = [];
 document.getElementById("i4l8rv").onclick = event => {
   event.preventDefault();
   const select = document.getElementById("i19dcl")
@@ -182,11 +117,66 @@ document.getElementById("i10lnu").addEventListener("click", event => {
 function initializearrayik5phk(data) {
   arrayik5phk = data.map(item => ({
     value: item._id,
+    liValue: item['wName']
+  }));
+}
+document.addEventListener('alignpWorkpackage', function(e) {
+  const advanceSelect = document.getElementById('i19dcl');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('alignpDeliverable', function(e) {
+  const advanceSelect = document.getElementById('iixj6p');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});let arrayi7ygzt = [];
+document.getElementById("ifrizw").onclick = event => {
+  event.preventDefault();
+  const select = document.getElementById("ifgcid")
+  arrayi7ygzt.push({
+      value: select.value,
+      liValue: select.selectedOptions[0].textContent
+  });
+  select.value = "";
+  select.selectedIndex = 0;
+  refreshULiirs1l();
+};
+
+function refreshULiirs1l() {
+let e=``;
+for (let y=0; y<arrayi7ygzt.length; y++)
+ {
+   e += `<li index='${y}' arrayvalue='${arrayi7ygzt[y].value}'><p style="display: inline-block">${arrayi7ygzt[y].liValue}</p><button class="btn pointer bi bi-trash delete-btn" style="display: inline-block;float: right;background-color: red;color: white;" index='${y}'>&nbsp;Delete</button></li>`;
+ }
+document.getElementById("iirs1l").innerHTML = e;
+}
+
+document.getElementById("iirs1l").addEventListener("click", event => {
+  event.preventDefault();
+  arrayi7ygzt = arrayi7ygzt.filter(
+    (item, index) => +event.target.getAttribute("index") !== index
+  );
+  refreshULiirs1l();
+});
+function initializearrayi7ygzt(data) {
+  arrayi7ygzt = data.map(item => ({
+    value: item._id,
     liValue: item['dName']
   }));
 }
 document.addEventListener('alignpDeliverable', function(e) {
-  const advanceSelect = document.getElementById('i19dcl');
+  const advanceSelect = document.getElementById('ifgcid');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
   [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
@@ -201,41 +191,7 @@ document.addEventListener('alignpDeliverable', function(e) {
         data: document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") !== null ? document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") : document.querySelector("[annotationname = 'pImage']").src,
         name: document.querySelector("[annotationname = 'pImage']").getAttribute("name")
       };
-      project['pTitle'] = document.querySelector("[annotationname = 'pTitle']").value;project['pEnd'] = document.querySelector("[annotationname = 'pEnd']").value;project['pWebsite'] = document.querySelector("[annotationname = 'pWebsite']").value;project['pStart'] = document.querySelector("[annotationname = 'pStart']").value;project['pDuration'] = document.querySelector("[annotationname = 'pDuration']").value;project['pGA'] = document.querySelector("[annotationname = 'pGA']").value;project["pWorkpackage"] = [...document.querySelector("[annotationname = 'pWorkpackage']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));project["pDeliverable"] = [...document.querySelector("[annotationname = 'pDeliverable']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));project['pAbstract'] = document.querySelector("[annotationname = 'pAbstract']").value;project['pDescription'] = document.querySelector("[annotationname = 'pDescription']").value;apiProjectApi.createproject( project, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {   location.href= '/homePage' ;}}});};window.onload = () => {apiWorkpackageApi.getAllworkpackage((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("itsq2w").querySelectorAll( "[dataitem='true']" )].filter(
-    (element, index, array) =>
-    !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
-  );const map = new Map();
-    if( data.length > subDataElements.length){
-      for(let i = 0; i <=  data.length - subDataElements.length; i++){
-        let parentNode = subDataElements[0].parentNode;
-        let child = parentNode.childNodes[0].cloneNode(true);
-        parentNode.appendChild(child);
-        subDataElements.push(child);
-      }
-    }
-    data.forEach((item,i) => {
-    if(subDataElements.length > i)
-      {
-        try { 
-      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'wName']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].wName;
-        insideSubDataElement.value=data[data.length -i -1]._id;
-      }
-      else if(subDataElements[i].getAttribute('annotationname') === 'wName'){
-        subDataElements[i].textContent = data[data.length -i -1].wName;
-        subDataElements[i].value=data[data.length -i -1]._id;
-      }
-     } catch (e) { console.log(e) };
-        map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
-        
-      }
-      document.dispatchEvent(new Event("alignpWorkpackage"))
-    });
-
-    window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
-    
-    [...subDataElements].forEach((element,index) => {if(index >= data.length) subDataElements[index].style.display = 'none';})}});apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i9slgj").querySelectorAll( "[dataitem='true']" )].filter(
+      project['pTitle'] = document.querySelector("[annotationname = 'pTitle']").value;project['pEnd'] = document.querySelector("[annotationname = 'pEnd']").value;project['pWebsite'] = document.querySelector("[annotationname = 'pWebsite']").value;project['pStart'] = document.querySelector("[annotationname = 'pStart']").value;project['pDuration'] = document.querySelector("[annotationname = 'pDuration']").value;project['pGA'] = document.querySelector("[annotationname = 'pGA']").value;project["pWorkpackage"] = [...document.querySelector("[annotationname = 'pWorkpackage']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));project["pDeliverable"] = [...document.querySelector("[annotationname = 'pDeliverable']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));project['pAbstract'] = document.querySelector("[annotationname = 'pAbstract']").value;project['pDescription'] = document.querySelector("[annotationname = 'pDescription']").value;apiProjectApi.createproject( project, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {   location.href= '/homePage' ;}}});};window.onload = () => {apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("iff4pu").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();
